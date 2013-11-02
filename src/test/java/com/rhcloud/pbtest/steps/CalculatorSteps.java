@@ -7,7 +7,7 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
 
-public class AddTwoNumbersSteps {
+public class CalculatorSteps {
     public Calculator calculator;
 
     @Given("a calculator")
@@ -28,6 +28,11 @@ public class AddTwoNumbersSteps {
     @When("I deduct <number1> and <number2>")
     public void whenIDeductNumber1AndNumber2(@Named("number1")int number1, @Named("number2")int number2) {
         calculator.deduct(number1, number2);
+    }
+
+    @When("I square <number1>")
+    public void whenISquareNumber1(@Named("number1")int number1) {
+        calculator.square(number1);
     }
 
 }

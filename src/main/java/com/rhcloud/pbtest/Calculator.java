@@ -11,6 +11,9 @@ public class Calculator {
         result = number1 - number2;
     }
 
+    public void square(int number1){
+        result =  number1*number1;
+    }
 
     public int getResult() {
         return result;

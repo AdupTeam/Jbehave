@@ -2,16 +2,20 @@ package com.rhcloud.pbtest.stories;
 
 
 
-import com.rhcloud.pbtest.steps.AddTwoNumbersSteps;
-import com.rhcloud.pbtest.steps.DeductToNumbersSteps;
+import com.rhcloud.pbtest.steps.CalculatorSteps;
 import org.jbehave.core.configuration.Configuration;
+import org.jbehave.core.io.StoryFinder;
+import org.jbehave.core.junit.JUnitStories;
 import org.jbehave.core.junit.JUnitStory;
 import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.CandidateSteps;
+import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
 
 import java.util.List;
 
+import static java.util.Arrays.asList;
+import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 import static org.jbehave.core.reporters.Format.*;
 
 public class CalculatorStories extends JUnitStory {
@@ -25,10 +29,10 @@ public class CalculatorStories extends JUnitStory {
                                 .withFormats(CONSOLE, TXT, XML));
     }
 
+
     @Override
-    public List<CandidateSteps> candidateSteps() {
-        return new InstanceStepsFactory(configuration(), new AddTwoNumbersSteps(), new DeductToNumbersSteps())
-                .createCandidateSteps();
+    public InjectableStepsFactory stepsFactory() {
+        return new InstanceStepsFactory(configuration(), new CalculatorSteps());
     }
 
 }
