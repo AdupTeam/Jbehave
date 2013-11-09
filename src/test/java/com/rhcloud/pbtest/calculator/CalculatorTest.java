@@ -1,27 +1,38 @@
 package com.rhcloud.pbtest.calculator;
 
 import com.rhcloud.pbtest.Calculator;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
+/**
+ * User: Przemek
+ * Date: 01.11.13
+ * Time: 20:29
+ */
 public class CalculatorTest {
-     private Calculator calculator = new Calculator();
+    Calculator calc = new Calculator();
 
+    //depends from getResult()
+    //@Ignore("Code coverage test")
     @Test
-    public void shouldAddNumbers(){
-       int number1 = 10;
-       int number2 = 5;
-        calculator.add(number1, number2);
-       assertTrue(calculator.getResult() == 15);
+    public void testAddTwoNumbers() throws Exception {
+        calc.add(1, 2);
+        assertEquals("Incorrect addition", 3, calc.getResult());
     }
 
-    @Ignore ("Code coverage test")
+    //depends from getResult()
+    //@Ignore ("Code coverage test")
     @Test
-    public void testDeduct() throws Exception {
-        calculator.deduct(4, 1);
-        assertEquals("Incorrect deduction", 3, calculator.getResult());
+    public void testDeductTwoNumbers() throws Exception {
+        calc.deduct(4, 1);
+        assertEquals("Incorrect deduction", 3, calc.getResult());
     }
+
+    @Test
+    public void shouldSquareNumber() throws Exception{
+        calc.square(2);
+        assertEquals("Incorrect square", 4, calc.getResult());
+    }
+
 }
