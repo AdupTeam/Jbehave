@@ -10,7 +10,6 @@ import static org.junit.Assert.assertTrue;
 public class CalculatorTest {
      private Calculator calculator = new Calculator();
 
-    @Ignore ("Code coverage test")
     @Test
     public void shouldAddNumbers(){
        int number1 = 10;

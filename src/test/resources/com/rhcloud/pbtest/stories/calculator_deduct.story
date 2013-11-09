@@ -3,6 +3,10 @@ In order to quickly find out the deduction of two numbers
 As a user
 I want to use a calculator to deduct two numbers
 
+Meta:
+@author Don Joe
+@themes Calc base tests
+
 Scenario:  Deduct two valid numbers
 
 Given a calculator

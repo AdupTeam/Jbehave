@@ -3,6 +3,10 @@ In order to quickly find out the result of squared number
 As a user
 I want to use a calculator to square number
 
+Meta:
+@author Ron Doe
+@themes Calc additional tests
+
 Scenario:  Square the number1
 
 Given a calculator
